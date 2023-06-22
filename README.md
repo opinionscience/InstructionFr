@@ -10,6 +10,7 @@ This project strives to compile the open instructions datasets that are either u
 * **Vicogne** 68,359 instructions automatically translated from common instruction datasets (Alpaca, ShareGPT…) by the Vicogne Project. A smaller subset of 6000 instructions has been made available.
 * **FrenchInstruction** 9083 instructions natively written and generated in French extracted from leading instructions datasets (Guanaco, ShareGPT, OpenAssistant, Self-Instruct…)
 
+## Format
 All the instructions follow the classic Alpaca structure:
 
 ```json
@@ -20,9 +21,17 @@ All the instructions follow the classic Alpaca structure:
   "source":"Oracle (fr.wikipedia.org)"
 }
 ```
+Yet, the two literary dataset are not really instructions dataset. For now it simply compiles two consecutive excerpts from fiction works, with a few filtering to avoid starting mid-sentence and to remove meta-indications (page headings). The text also include optical recognition errors (for instance due to preservation issue with the original archive). Normally it should not affect significantly the fine-tune.
 
+```json
+{ "instruction_id":"gbooks_1R06AAAAcAAJ.pdf_116",
+  "instruction":"Craſſus ne fut pas moins ſurpris ; cette familiarité l'inquieta . Il favoit bien que Tercie étoit trop jeune pour avoir pris des engagemens avec Ceſar avant ſon voyage des Gaules ; tout cela lui paroiſſoit un enchantement. Il lui prit les mains & les lui baiſa & fe plaignit de ce qu'elle avoit pris trop de ſoin à ſe parerpuiſqu'elle n'avoit beſoin d'aucun ornement pour lui plai re : & enſuite adreſſant la parole à Crafſusil lui de manda s'il ne croïoit pas qu'il dût préferer la conque te d'une fibelle perſonne à tout l'Univers.",
+  "output":"Aprés a. voir joui de ce plaiſir durant une heure il prit congé de la Compagnie & dit à Servilia qu'il la revien droit voir dans un autre temps où la Cour ſeroit moins groſſe. Le lendemain Servilia envoya le Poëte Lucrece qui étoit alors fon Amant au lever de Ceſar pour ſavoir s'il trouveroit mauvais qu'elle achevât le ma. riage de la fille avec Craſſus. Ceſar lui dit franche ment qu'il n'avoit eu deſſein que de ſe réjouir & qu'il ne prétendoit point empêcher les avantages de Tercie & moins encore de ſuivre fon inclination . Lucrece ayant appris les fen : imens de Cefar ,lui con ſeilla de finir la choſe par un dénouëment agréable. Il fit des Vers que Celar copia ſur le champ & qu'il envoya à : Tercie par un de ſes Eſclaves. Tercie ayant reçu le billet de Celar l'ouvrit en tremblant& y lut en préſence de fa mere ce qui ſuit :",
+  "input":""
+}
+```
 
-# Usage
+## Usage
 Theses datasets aim primarily to serve as reusable educational resources for training open LLMs. Diversity and free reuse have been important requirements.
 
 The **Novel17** is a good illustration of the dramatic impact of fine-tuning. The language is different standard than contemporary French with a specific syntax, vocabulary and even letters (such as the "long" s, ſ). In less than one epoch (roughly 15 minutes on a A100 with 40 go of VRAM), Falcon-Instruct-7B assimilate already theses specificities :
