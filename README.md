@@ -17,7 +17,8 @@ All the instructions follow the classic Alpaca structure:
   "instruction":"Bonjour à vous, Je lisais l'article sur la Tour de Nesle et ai cliqué sur la première carte de l'article [[2]]. Juste à côté de la Tour, il y a un pont qui enjambe... qui enjambe quoi? J'ai regardé d'autres cartes et n'ai pas trouvé la réponse. La phrase sur une sorte de butte inondée par le fleuve en hiver ne m'aide pas. Si c'est une rivière, quelle rue actuelle la recouvre aujourd'hui? Formule cordiale,",
   "input":"",
   "output":"D'après le texte joint au dessin d'Eugène Viollet le Duc : « La vue perspective de cette tour (fig. 61), prise en dehors de la porte de Nesle, en fait comprendre la valeur comme poste d'observation sur le fleuve. De là des signaux pouvaient être transmis au Louvre , et vice versa, sur tout le front occidental des remparts de la rive gauche et au palais de la Cité. En amont de Paris, deux autres tours à peu près semblables à celle-ci barraient la rivière: l'une, dite tour Barbeau, formait tête du rempart sur la rive droite; l'autre, dite la Tournelle, avait la même destination sur la rive gauche. Ces deux ouvrages, qui se trouvaient au droit du milieu de l'île Saint-Louis, se reliaient avec deux autres tours élevées sur les berges de cette île, coupée alors par un fossé que remplissait la Seine ... » Ce serait donc la Seine elle-même.",
-  "source":"Oracle (fr.wikipedia.org)"}
+  "source":"Oracle (fr.wikipedia.org)"
+}
 ```
 
 
